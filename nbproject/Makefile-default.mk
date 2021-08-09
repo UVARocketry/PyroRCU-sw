@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../EngineSensorRCU-sw/libpicutil/adc.c ../EngineSensorRCU-sw/libpicutil/time.c ../EngineSensorRCU-sw/libpicutil/uart_debug.c ../EngineSensorRCU-sw/libcan/can.c ../EngineSensorRCU-sw/main.c
+SOURCEFILES_QUOTED_IF_SPACED=libcan/can.c libpicutil/adc.c libpicutil/time.c libpicutil/uart_debug.c libpicutil/leds.c main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1215426526/adc.p1 ${OBJECTDIR}/_ext/1215426526/time.p1 ${OBJECTDIR}/_ext/1215426526/uart_debug.p1 ${OBJECTDIR}/_ext/1920132062/can.p1 ${OBJECTDIR}/_ext/81940728/main.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1215426526/adc.p1.d ${OBJECTDIR}/_ext/1215426526/time.p1.d ${OBJECTDIR}/_ext/1215426526/uart_debug.p1.d ${OBJECTDIR}/_ext/1920132062/can.p1.d ${OBJECTDIR}/_ext/81940728/main.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/libcan/can.p1 ${OBJECTDIR}/libpicutil/adc.p1 ${OBJECTDIR}/libpicutil/time.p1 ${OBJECTDIR}/libpicutil/uart_debug.p1 ${OBJECTDIR}/libpicutil/leds.p1 ${OBJECTDIR}/main.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/libcan/can.p1.d ${OBJECTDIR}/libpicutil/adc.p1.d ${OBJECTDIR}/libpicutil/time.p1.d ${OBJECTDIR}/libpicutil/uart_debug.p1.d ${OBJECTDIR}/libpicutil/leds.p1.d ${OBJECTDIR}/main.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1215426526/adc.p1 ${OBJECTDIR}/_ext/1215426526/time.p1 ${OBJECTDIR}/_ext/1215426526/uart_debug.p1 ${OBJECTDIR}/_ext/1920132062/can.p1 ${OBJECTDIR}/_ext/81940728/main.p1
+OBJECTFILES=${OBJECTDIR}/libcan/can.p1 ${OBJECTDIR}/libpicutil/adc.p1 ${OBJECTDIR}/libpicutil/time.p1 ${OBJECTDIR}/libpicutil/uart_debug.p1 ${OBJECTDIR}/libpicutil/leds.p1 ${OBJECTDIR}/main.p1
 
 # Source Files
-SOURCEFILES=../EngineSensorRCU-sw/libpicutil/adc.c ../EngineSensorRCU-sw/libpicutil/time.c ../EngineSensorRCU-sw/libpicutil/uart_debug.c ../EngineSensorRCU-sw/libcan/can.c ../EngineSensorRCU-sw/main.c
+SOURCEFILES=libcan/can.c libpicutil/adc.c libpicutil/time.c libpicutil/uart_debug.c libpicutil/leds.c main.c
 
 
 
@@ -94,86 +94,102 @@ MP_PROCESSOR_OPTION=18F26K83
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/1215426526/adc.p1: ../EngineSensorRCU-sw/libpicutil/adc.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1215426526" 
-	@${RM} ${OBJECTDIR}/_ext/1215426526/adc.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1215426526/adc.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1215426526/adc.p1 ../EngineSensorRCU-sw/libpicutil/adc.c 
-	@-${MV} ${OBJECTDIR}/_ext/1215426526/adc.d ${OBJECTDIR}/_ext/1215426526/adc.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1215426526/adc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/libcan/can.p1: libcan/can.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/libcan" 
+	@${RM} ${OBJECTDIR}/libcan/can.p1.d 
+	@${RM} ${OBJECTDIR}/libcan/can.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libcan/can.p1 libcan/can.c 
+	@-${MV} ${OBJECTDIR}/libcan/can.d ${OBJECTDIR}/libcan/can.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libcan/can.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/1215426526/time.p1: ../EngineSensorRCU-sw/libpicutil/time.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1215426526" 
-	@${RM} ${OBJECTDIR}/_ext/1215426526/time.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1215426526/time.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1215426526/time.p1 ../EngineSensorRCU-sw/libpicutil/time.c 
-	@-${MV} ${OBJECTDIR}/_ext/1215426526/time.d ${OBJECTDIR}/_ext/1215426526/time.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1215426526/time.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/libpicutil/adc.p1: libpicutil/adc.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/libpicutil" 
+	@${RM} ${OBJECTDIR}/libpicutil/adc.p1.d 
+	@${RM} ${OBJECTDIR}/libpicutil/adc.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libpicutil/adc.p1 libpicutil/adc.c 
+	@-${MV} ${OBJECTDIR}/libpicutil/adc.d ${OBJECTDIR}/libpicutil/adc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libpicutil/adc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/1215426526/uart_debug.p1: ../EngineSensorRCU-sw/libpicutil/uart_debug.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1215426526" 
-	@${RM} ${OBJECTDIR}/_ext/1215426526/uart_debug.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1215426526/uart_debug.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1215426526/uart_debug.p1 ../EngineSensorRCU-sw/libpicutil/uart_debug.c 
-	@-${MV} ${OBJECTDIR}/_ext/1215426526/uart_debug.d ${OBJECTDIR}/_ext/1215426526/uart_debug.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1215426526/uart_debug.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/libpicutil/time.p1: libpicutil/time.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/libpicutil" 
+	@${RM} ${OBJECTDIR}/libpicutil/time.p1.d 
+	@${RM} ${OBJECTDIR}/libpicutil/time.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libpicutil/time.p1 libpicutil/time.c 
+	@-${MV} ${OBJECTDIR}/libpicutil/time.d ${OBJECTDIR}/libpicutil/time.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libpicutil/time.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/1920132062/can.p1: ../EngineSensorRCU-sw/libcan/can.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1920132062" 
-	@${RM} ${OBJECTDIR}/_ext/1920132062/can.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1920132062/can.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1920132062/can.p1 ../EngineSensorRCU-sw/libcan/can.c 
-	@-${MV} ${OBJECTDIR}/_ext/1920132062/can.d ${OBJECTDIR}/_ext/1920132062/can.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1920132062/can.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/libpicutil/uart_debug.p1: libpicutil/uart_debug.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/libpicutil" 
+	@${RM} ${OBJECTDIR}/libpicutil/uart_debug.p1.d 
+	@${RM} ${OBJECTDIR}/libpicutil/uart_debug.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libpicutil/uart_debug.p1 libpicutil/uart_debug.c 
+	@-${MV} ${OBJECTDIR}/libpicutil/uart_debug.d ${OBJECTDIR}/libpicutil/uart_debug.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libpicutil/uart_debug.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/81940728/main.p1: ../EngineSensorRCU-sw/main.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/81940728" 
-	@${RM} ${OBJECTDIR}/_ext/81940728/main.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/81940728/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/81940728/main.p1 ../EngineSensorRCU-sw/main.c 
-	@-${MV} ${OBJECTDIR}/_ext/81940728/main.d ${OBJECTDIR}/_ext/81940728/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/81940728/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/libpicutil/leds.p1: libpicutil/leds.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/libpicutil" 
+	@${RM} ${OBJECTDIR}/libpicutil/leds.p1.d 
+	@${RM} ${OBJECTDIR}/libpicutil/leds.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libpicutil/leds.p1 libpicutil/leds.c 
+	@-${MV} ${OBJECTDIR}/libpicutil/leds.d ${OBJECTDIR}/libpicutil/leds.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libpicutil/leds.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.p1.d 
+	@${RM} ${OBJECTDIR}/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/_ext/1215426526/adc.p1: ../EngineSensorRCU-sw/libpicutil/adc.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1215426526" 
-	@${RM} ${OBJECTDIR}/_ext/1215426526/adc.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1215426526/adc.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1215426526/adc.p1 ../EngineSensorRCU-sw/libpicutil/adc.c 
-	@-${MV} ${OBJECTDIR}/_ext/1215426526/adc.d ${OBJECTDIR}/_ext/1215426526/adc.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1215426526/adc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/libcan/can.p1: libcan/can.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/libcan" 
+	@${RM} ${OBJECTDIR}/libcan/can.p1.d 
+	@${RM} ${OBJECTDIR}/libcan/can.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libcan/can.p1 libcan/can.c 
+	@-${MV} ${OBJECTDIR}/libcan/can.d ${OBJECTDIR}/libcan/can.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libcan/can.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/1215426526/time.p1: ../EngineSensorRCU-sw/libpicutil/time.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1215426526" 
-	@${RM} ${OBJECTDIR}/_ext/1215426526/time.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1215426526/time.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1215426526/time.p1 ../EngineSensorRCU-sw/libpicutil/time.c 
-	@-${MV} ${OBJECTDIR}/_ext/1215426526/time.d ${OBJECTDIR}/_ext/1215426526/time.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1215426526/time.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/libpicutil/adc.p1: libpicutil/adc.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/libpicutil" 
+	@${RM} ${OBJECTDIR}/libpicutil/adc.p1.d 
+	@${RM} ${OBJECTDIR}/libpicutil/adc.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libpicutil/adc.p1 libpicutil/adc.c 
+	@-${MV} ${OBJECTDIR}/libpicutil/adc.d ${OBJECTDIR}/libpicutil/adc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libpicutil/adc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/1215426526/uart_debug.p1: ../EngineSensorRCU-sw/libpicutil/uart_debug.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1215426526" 
-	@${RM} ${OBJECTDIR}/_ext/1215426526/uart_debug.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1215426526/uart_debug.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1215426526/uart_debug.p1 ../EngineSensorRCU-sw/libpicutil/uart_debug.c 
-	@-${MV} ${OBJECTDIR}/_ext/1215426526/uart_debug.d ${OBJECTDIR}/_ext/1215426526/uart_debug.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1215426526/uart_debug.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/libpicutil/time.p1: libpicutil/time.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/libpicutil" 
+	@${RM} ${OBJECTDIR}/libpicutil/time.p1.d 
+	@${RM} ${OBJECTDIR}/libpicutil/time.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libpicutil/time.p1 libpicutil/time.c 
+	@-${MV} ${OBJECTDIR}/libpicutil/time.d ${OBJECTDIR}/libpicutil/time.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libpicutil/time.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/1920132062/can.p1: ../EngineSensorRCU-sw/libcan/can.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1920132062" 
-	@${RM} ${OBJECTDIR}/_ext/1920132062/can.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1920132062/can.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1920132062/can.p1 ../EngineSensorRCU-sw/libcan/can.c 
-	@-${MV} ${OBJECTDIR}/_ext/1920132062/can.d ${OBJECTDIR}/_ext/1920132062/can.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1920132062/can.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/libpicutil/uart_debug.p1: libpicutil/uart_debug.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/libpicutil" 
+	@${RM} ${OBJECTDIR}/libpicutil/uart_debug.p1.d 
+	@${RM} ${OBJECTDIR}/libpicutil/uart_debug.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libpicutil/uart_debug.p1 libpicutil/uart_debug.c 
+	@-${MV} ${OBJECTDIR}/libpicutil/uart_debug.d ${OBJECTDIR}/libpicutil/uart_debug.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libpicutil/uart_debug.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/81940728/main.p1: ../EngineSensorRCU-sw/main.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/81940728" 
-	@${RM} ${OBJECTDIR}/_ext/81940728/main.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/81940728/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/81940728/main.p1 ../EngineSensorRCU-sw/main.c 
-	@-${MV} ${OBJECTDIR}/_ext/81940728/main.d ${OBJECTDIR}/_ext/81940728/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/81940728/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/libpicutil/leds.p1: libpicutil/leds.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/libpicutil" 
+	@${RM} ${OBJECTDIR}/libpicutil/leds.p1.d 
+	@${RM} ${OBJECTDIR}/libpicutil/leds.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libpicutil/leds.p1 libpicutil/leds.c 
+	@-${MV} ${OBJECTDIR}/libpicutil/leds.d ${OBJECTDIR}/libpicutil/leds.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libpicutil/leds.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.p1.d 
+	@${RM} ${OBJECTDIR}/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

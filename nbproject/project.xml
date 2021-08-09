@@ -14,6 +14,7 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>../EngineSensorRCU-sw</sourceRootElem>
+                <sourceRootElem/>
             </sourceRootList>
             <confList>
                 <confElem>

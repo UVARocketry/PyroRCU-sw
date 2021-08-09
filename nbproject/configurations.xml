@@ -6,18 +6,20 @@
                    projectFiles="true">
     </logicalFolder>
     <logicalFolder name="libcan" displayName="libcan" projectFiles="true">
-      <itemPath>../EngineSensorRCU-sw/libcan/can.c</itemPath>
-      <itemPath>../EngineSensorRCU-sw/libcan/can.h</itemPath>
-      <itemPath>../EngineSensorRCU-sw/libcan/can_messages.h</itemPath>
+      <itemPath>libcan/can.c</itemPath>
+      <itemPath>libcan/can.h</itemPath>
+      <itemPath>libcan/can_messages.h</itemPath>
     </logicalFolder>
     <logicalFolder name="libpicutil" displayName="libpicutil" projectFiles="true">
-      <itemPath>../EngineSensorRCU-sw/libpicutil/adc.c</itemPath>
-      <itemPath>../EngineSensorRCU-sw/libpicutil/adc.h</itemPath>
-      <itemPath>../EngineSensorRCU-sw/libpicutil/config_mem.h</itemPath>
-      <itemPath>../EngineSensorRCU-sw/libpicutil/time.c</itemPath>
-      <itemPath>../EngineSensorRCU-sw/libpicutil/time.h</itemPath>
-      <itemPath>../EngineSensorRCU-sw/libpicutil/uart_debug.c</itemPath>
-      <itemPath>../EngineSensorRCU-sw/libpicutil/uart_debug.h</itemPath>
+      <itemPath>libpicutil/adc.c</itemPath>
+      <itemPath>libpicutil/adc.h</itemPath>
+      <itemPath>libpicutil/config_mem.h</itemPath>
+      <itemPath>libpicutil/time.c</itemPath>
+      <itemPath>libpicutil/time.h</itemPath>
+      <itemPath>libpicutil/uart_debug.c</itemPath>
+      <itemPath>libpicutil/uart_debug.h</itemPath>
+      <itemPath>libpicutil/leds.c</itemPath>
+      <itemPath>libpicutil/leds.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -32,10 +34,11 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
-    <itemPath>../EngineSensorRCU-sw/main.c</itemPath>
+    <itemPath>main.c</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>../EngineSensorRCU-sw</Elem>
+    <Elem></Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
